@@ -8,6 +8,11 @@ import com.asiainfo.abdinfo.po.User;
 public interface ITipsDao {
 	
 	public int addTipsDailyfeeling(Map<String, Object> map);
+	/**
+	 * 韩启龙到此一游
+	 * @param map
+	 * @return
+	 */
 	public int addTipsOwes_content(Map<String, Object> map);
 	public List<User> findTips(Map<String, Object> map);
 	public int updateTipsDailyfeeling(Map<String, Object> map);
