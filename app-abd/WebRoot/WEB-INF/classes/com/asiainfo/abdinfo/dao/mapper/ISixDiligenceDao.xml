@@ -1,0 +1,57 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.asiainfo.abdinfo.dao.ISixDiligenceDao">
+
+	<resultMap type="com.asiainfo.abdinfo.po.SixDiligence" id="sixDiligence">
+		<result property="date" column="date" />
+		<result property="department" column="department"/>
+		<result property="staffName" column="staffName" />
+		<collection property="types" column="types" ofType="com.asiainfo.abdinfo.po.Menus" javaType="ArrayList">
+			<result property="type" column="types" />
+			<result property="content" column="content" />
+		</collection>
+    </resultMap>
+    <resultMap type="com.asiainfo.abdinfo.po.SixDiligence" id="sixDiligences">
+		<id property="id" column="id" />
+		<result property="ceshi" column="ReadingFeeling"/>
+    </resultMap>
+    <resultMap  type="com.asiainfo.abdinfo.po.SixDiligence" id="tips">
+    	<id property="id" column="id" />
+    	<collection property="menus" column="staffCode" ofType="com.asiainfo.abdinfo.po.Menus" javaType="ArrayList">
+			<result property="Pers" column="owePerson" />
+			<result property="Detail" column="oweDetails"/>
+		</collection>
+    </resultMap>
+    <resultMap  type="com.asiainfo.abdinfo.po.SixDiligence" id="works">
+    	<id property="id" column="id" />
+    	<collection property="works" column="actconcom" ofType="com.asiainfo.abdinfo.po.Works" javaType="ArrayList">
+			<result property="work" column="actconcom"/>
+		</collection>
+    </resultMap>
+    
+    <select id="findTips" parameterType="java.util.Map" resultMap="tips">
+    	select staffCode,owePerson,oweDetails from owes_content
+    	where staffCode=#{staffCode} and date=#{date}
+    </select>
+	
+	<!-- 查询六项精进"今日感想","今日反省","今日善行","感恩其他" -->
+	<select id="findSixDiligence"  parameterType="java.util.Map" resultMap="sixDiligence">
+		select r.id,r.department,r.types,r.content,r.staffCode,r.date from Reading_reflection r
+		where staffCode=#{staffCode} and date=#{date}
+	</select>
+	<!-- 查询六项精进读书感想 -->
+	<select id="findReadFeeling"  parameterType="java.util.Map" resultMap="sixDiligences">
+		select ReadingFeeling from Reading_plancontent 
+		where staffCode=#{staffCode} and actualReading=#{date}
+	</select>
+	<!-- 查询六项精进行实践内容 -->
+	<select id="findWork"  parameterType="java.util.Map" resultMap="works">
+		select actconcom from work_plan 
+		where staffCode=#{staffCode} and date=#{date}
+	</select>
+	
+	
+	
+	
+	
+</mapper>

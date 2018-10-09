@@ -1,0 +1,70 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.asiainfo.abdinfo.dao.NewLoginPage">
+
+
+	<select id="findUser" parameterType="java.util.Map"
+		resultType="com.asiainfo.abdinfo.po.NewLoginBean.NewLogin">
+		select * from USERTABLE where openId=#{openId}
+	</select>
+
+	<!-- 插入用户 -->
+	<insert id="insertUser" parameterType="java.util.Map">
+		INSERT into USERTABLE
+		(openid,微信名,性别,城市,省份,国家,头像)
+		values
+		(#{openId},#{nickName},#{gender},#{city},#{province},#{country},#{avatarUrl})
+	</insert>
+
+	<update id="updateUser" parameterType="java.util.Map">
+		UPDATE USERTABLE set
+		员工编码=#{userId} , 密码=#{password} where openid=#{openId}
+	</update>
+
+	<select id="findNewUser" parameterType="String"
+		resultType="com.asiainfo.abdinfo.po.NewLoginBean.NewLogin">
+		select
+		员工编码 as staffCode,
+		密码 as pwd,
+		微信名 as nickName,
+		性别 as
+		gender,
+		城市 as city,
+		省份 as province,
+		国家 as country,
+		头像 as avatarUrl
+		from
+		USERTABLE where openId=#{openId}
+	</select>
+   
+   
+   
+	<select id="findAllFeeling" resultType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">
+	SELECT
+		rr.id,
+		rd.`姓名` as staffName, 
+		rr.staffCode,
+		rr.timeLength,
+		rr.ReadingFeeling,
+		rr.num,
+		rr.praise,
+		rr.praiseNum,
+		rr.fabulous,
+		rr.fabulousNum,
+		rr.enshrine,
+		rr.enshrineNum,
+    rr.actualReading,
+		uu.`微信名` as nickName,
+		uu.`头像` as avatarUrl
+		from reading_plancontent rr
+		LEFT JOIN usertable uu ON rr.staffCode=uu.`员工编码`
+		LEFT JOIN datacenter_personnel rd ON rr.staffCode=rd.`人员编码`
+		WHERE rr.clockDate=curdate() AND rr.ReadingFeeling!=''
+	</select>
+
+
+</mapper>
+
+
+
+
+

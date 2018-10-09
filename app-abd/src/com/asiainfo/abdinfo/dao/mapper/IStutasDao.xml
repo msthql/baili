@@ -1,0 +1,27 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.asiainfo.abdinfo.dao.IStutasDao">
+	
+	
+
+	<!-- 更新数据即插入数据 -->
+	<update id="addStutas" parameterType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">  
+		UPDATE
+		Reading_plancontent
+		SET praise=#{praise},fabulous=#{fabulous},enshrine=#{enshrine}
+		where id=#{id}
+	</update>
+	
+	
+
+
+
+	
+
+
+</mapper>
+
+
+
+
+

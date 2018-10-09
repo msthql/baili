@@ -1,0 +1,19 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.asiainfo.abdinfo.dao.PersonnelMapper">
+	
+	
+	<select id="findByper" resultType="com.asiainfo.abdinfo.po.Personnel">
+		select * from datacenter_personnel
+		 where 人员编码=#{usercode} and 登录密码=#{userpwd}
+	</select>
+	
+	<select id="findAllPer" resultType="com.asiainfo.abdinfo.po.Personnel"> 
+		select * from datacenter_personnel	
+	</select>
+
+	<select id="findByCode" resultType="com.asiainfo.abdinfo.po.Personnel"> 
+		select * from datacenter_personnel	where 人员编码=#{usercode}
+	</select>
+
+</mapper>
