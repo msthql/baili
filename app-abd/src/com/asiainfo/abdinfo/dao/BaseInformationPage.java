@@ -7,6 +7,11 @@ import org.apache.ibatis.annotations.Param;
 
 import com.asiainfo.abdinfo.po.BaseInformation;
 
+/**
+ * 进晓宇
+ * @author Administrator
+ *
+ */
 public interface BaseInformationPage {
 	
 	
