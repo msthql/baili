@@ -21,6 +21,12 @@ public interface BaseInformationPage {
 	
 	void DeleteBaseInformation(@Param(value="id") Integer id);
 	
+	
+	/**
+	 * 进晓宇就是一个好娃娃
+	 * @param areaName
+	 * @param priority
+	 */
 	void addBaseInformation(@Param(value="areaName") String areaName ,@Param(value="priority") String priority);
 	
 	
