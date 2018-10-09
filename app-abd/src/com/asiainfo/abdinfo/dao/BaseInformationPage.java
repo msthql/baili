@@ -7,11 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import com.asiainfo.abdinfo.po.BaseInformation;
 
-/**
- * 进晓宇
- * @author Administrator
- *
- */
 public interface BaseInformationPage {
 	
 	
@@ -23,7 +18,7 @@ public interface BaseInformationPage {
 	
 	
 	/**
-	 * 进晓宇就是一个好娃娃
+	 * 最终会变成什么样呢？
 	 * @param areaName
 	 * @param priority
 	 */
