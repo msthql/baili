@@ -20,6 +20,6 @@ public interface NewLoginService {
 	/**
 	 * 用于展示用户的感想
 	 */
-	List<ListAllFeeling> getAllFeeling();
+	List<ListAllFeeling> getAllFeeling(String staffCode);
 
 }

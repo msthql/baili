@@ -3,10 +3,8 @@ package com.asiainfo.abdinfo.service.impl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.asiainfo.abdinfo.dao.NewLoginPage;
 import com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling;
 import com.asiainfo.abdinfo.po.NewLoginBean.NewLogin;
@@ -54,10 +52,12 @@ public class NewLoginImple implements NewLoginService{
 	 * 显示用户的所有感想
 	 */
 	@Override
-	public List<ListAllFeeling> getAllFeeling() {		
-		return newLoginPage.findAllFeeling();
+	public List<ListAllFeeling> getAllFeeling(String staffCode) {		
+		return newLoginPage.findAllFeeling( staffCode);
 	}
 }
+
+
 
 
 

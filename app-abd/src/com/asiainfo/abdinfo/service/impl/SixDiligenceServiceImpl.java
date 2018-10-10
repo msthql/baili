@@ -20,10 +20,10 @@ public class SixDiligenceServiceImpl implements ISixDiligenceService{
 	@Override
 	public Map<String, Object> findSixDiligence(Map<String, Object> map) {
 		System.out.println(map);
-		SixDiligence sixDiligence=sixDiligenceDao.findSixDiligence(map);
-		SixDiligence tips=sixDiligenceDao.findTips(map);
-		SixDiligence readFeeling=sixDiligenceDao.findReadFeeling(map);
-		SixDiligence works=sixDiligenceDao.findWork(map);
+		SixDiligence sixDiligence=sixDiligenceDao.findSixDiligence(map);  //今日反思 n
+		SixDiligence tips=sixDiligenceDao.findTips(map);        //感恩的人n
+		SixDiligence readFeeling=sixDiligenceDao.findReadFeeling(map);  //读书感悟1
+		SixDiligence works=sixDiligenceDao.findWork(map);   //工作z
 		Map<String,Object> data=new HashMap<String,Object>();
 		data.put("sixDiligence",sixDiligence);
 		data.put("tips",tips);
