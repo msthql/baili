@@ -2,7 +2,11 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.asiainfo.abdinfo.dao.IStutasDao">
 	
-	
+	<resultMap type="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling" id="enshrines">
+		<result property="staffCode" column="staffCode" />
+		<result property="ReadingFeeling" column="ReadingFeeling"/>
+		<result property="staffName" column="姓名" />
+	</resultMap>
 
 	<!-- 更新数据即插入数据 -->
 	<update id="addStutas" parameterType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">  
@@ -11,6 +15,28 @@
 		SET praise=#{praise},fabulous=#{fabulous},enshrine=#{enshrine}
 		where id=#{id}
 	</update>
+	
+	<!-- 插入收藏信息 -->
+	<insert id="addEnshrine"  parameterType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">
+		insert into myenshrine(staffCode,enshrineID) values(#{staffCode},#{id})
+	</insert>
+	<!-- 查询收藏信息 -->
+	<select id="selectEnshrine"  parameterType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling" resultType="int">
+		select enshrineID from myenshrine where staffCode=#{staffCode}
+	</select>
+	<!-- 删除收藏信息 -->
+	<delete id="deleteEnshrine"  parameterType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">
+		delete from myenshrine where enshrineID=#{id}
+	</delete>
+	
+	<!-- 查询收藏的全部信息 -->
+	<select id="selectEnshrines" resultMap="enshrines">
+		select m.staffCode,r.ReadingFeeling,d.姓名,rd.clockDirectory from myenshrine m 
+		INNER JOIN reading_plancontent r on m.enshrineID=r.id 
+		INNER JOIN reading_detail rd on rd.id=r.ChapterId
+		INNER JOIN datacenter_personnel d on r.staffCode=d.人员编码
+		where m.staffCode=#{staffCode} order by r.clockDate desc
+	</select>
 	
 	
 

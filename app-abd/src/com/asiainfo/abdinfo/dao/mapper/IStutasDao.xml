@@ -31,10 +31,11 @@
 	
 	<!-- 查询收藏的全部信息 -->
 	<select id="selectEnshrines" resultMap="enshrines">
-		select m.staffCode,r.ReadingFeeling,d.姓名 from myenshrine m 
+		select m.staffCode,r.ReadingFeeling,d.姓名,rd.clockDirectory from myenshrine m 
 		INNER JOIN reading_plancontent r on m.enshrineID=r.id 
+		INNER JOIN reading_detail rd on rd.id=r.ChapterId
 		INNER JOIN datacenter_personnel d on r.staffCode=d.人员编码
-		where m.staffCode=#{staffCode}
+		where m.staffCode=#{staffCode} order by r.clockDate desc
 	</select>
 	
 	

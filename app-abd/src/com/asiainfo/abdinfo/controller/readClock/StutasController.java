@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
@@ -39,12 +40,16 @@ public class StutasController {
 	}
 	
 	@RequestMapping(value="/enshrines.do")
-	@ResponseBody
+	@ResponseBody 
 	public List<ListAllFeeling> enshrines(HttpServletRequest request,HttpServletResponse response){
 		String staffCode=request.getParameter("staffCode");
+		System.out.println("als;dfja;sldf;");
+		System.out.println(staffCode);
 		List<ListAllFeeling> list=stutasService.selectEnshrines(staffCode);
 		/*JSONArray jsonArray=JSONArray.;
 		ResponseUtils.renderJson(response, );*/
 		return list;
 	}
+	
+	
 }

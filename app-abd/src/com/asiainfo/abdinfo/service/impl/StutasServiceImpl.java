@@ -1,5 +1,7 @@
 package com.asiainfo.abdinfo.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,15 @@ public class StutasServiceImpl implements IStutasService{
 		}
 		if (listAllFeeling.getFabulous()==null) {
 			listAllFeeling.setFabulous("0");
+		}
+		List<Integer> list=stutaDao.selectEnshrine(listAllFeeling);
+		
+		if (listAllFeeling.getEnshrine().equals("1")) {
+			if (!list.contains(listAllFeeling.getId())) {
+				stutaDao.addEnshrine(listAllFeeling);
+			}
+		}else{
+			stutaDao.deleteEnshrine(listAllFeeling);
 		}
 		System.out.println(stutaDao.addStutas(listAllFeeling));
 		return stutaDao.addStutas(listAllFeeling);

@@ -6,7 +6,8 @@ public class ListAllFeeling implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private Integer id;
-	
+	//章节名称
+	private String clockDirectory;
 	//rd.`姓名` as staffName, 
 	private String staffName;
 	
@@ -167,14 +168,24 @@ public class ListAllFeeling implements Serializable{
 		this.enshrineNum = enshrineNum;
 	}
 
+	public String getClockDirectory() {
+		return clockDirectory;
+	}
+
+	public void setClockDirectory(String clockDirectory) {
+		this.clockDirectory = clockDirectory;
+	}
+
 	@Override
 	public String toString() {
-		return "ListAllFeeling [id=" + id + ", staffName=" + staffName + ", staffCode=" + staffCode + ", timeLength="
-				+ timeLength + ", ReadingFeeling=" + ReadingFeeling + ", num=" + num + ", nickName=" + nickName
-				+ ", avatarUrl=" + avatarUrl + ", praise=" + praise + ", praiseNum=" + praiseNum + ", fabulous="
-				+ fabulous + ", fabulousNum=" + fabulousNum + ", enshrine=" + enshrine + ", enshrineNum=" + enshrineNum
-				+ ", actualReading=" + actualReading + "]";
+		return "ListAllFeeling [id=" + id + ", clockDirectory=" + clockDirectory + ", staffName=" + staffName
+				+ ", staffCode=" + staffCode + ", timeLength=" + timeLength + ", ReadingFeeling=" + ReadingFeeling
+				+ ", num=" + num + ", nickName=" + nickName + ", avatarUrl=" + avatarUrl + ", praise=" + praise
+				+ ", praiseNum=" + praiseNum + ", fabulous=" + fabulous + ", fabulousNum=" + fabulousNum + ", enshrine="
+				+ enshrine + ", enshrineNum=" + enshrineNum + ", actualReading=" + actualReading + "]";
 	}
+
+	
 
 
 	

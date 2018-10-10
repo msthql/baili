@@ -50,7 +50,7 @@ public class PerServiceImpl implements PerService{
 			List<WorkPlan> wkList=wkser.findnowday(perlist.get(i) .getUsercode(), nowday);
 				perlist.get(i).setWplist(wkList);
 				System.out.println(perlist.get(i));
-				if (!perlist.get(i).getWplist().isEmpty()&&!perlist.get(i).getUsercode().equals(usercode)) {
+				if (!perlist.get(i).getWplist().isEmpty()/*&&!perlist.get(i).getUsercode().equals(usercode)*/) {
 					perlistk.add(perlist.get(i));
 				}
 		}

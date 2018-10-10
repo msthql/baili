@@ -42,7 +42,7 @@
 	<!-- 查询六项精进读书感想 -->
 	<select id="findReadFeeling"  parameterType="java.util.Map" resultMap="sixDiligences">
 		select ReadingFeeling from Reading_plancontent 
-		where staffCode=#{staffCode} and actualReading=#{date}
+		where staffCode=#{staffCode} and clockDate=#{date}
 	</select>
 	<!-- 查询六项精进行实践内容 -->
 	<select id="findWork"  parameterType="java.util.Map" resultMap="works">
