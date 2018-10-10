@@ -8,6 +8,8 @@ public class Test {
 		System.out.println("进晓宇必须是一个好娃娃");
 		System.out.println("王海成是一个好娃娃");
 		
+		System.out.println("fdfdfdfdf");
+		
 	}
 
 }
