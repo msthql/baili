@@ -49,8 +49,8 @@
 	<!-- count(rp.读书时间) 以读 rp.章节ID 需读 bb.书名 读的本书 -->
 	 <select id="findCount" parameterType="java.util.Map"
 		resultType="com.asiainfo.abdinfo.po.ReadCount">
-		select count(rp.actualReading) as readEnd,
-		count(rp.ChapterId) as
+		select count(DISTINCT rp.actualReading) as readEnd,
+		count(DISTINCT rp.ChapterId) as
 		needRead,
 		count(DISTINCT bb.clockBook) as alreadyBook
 		from

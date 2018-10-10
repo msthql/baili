@@ -34,7 +34,7 @@ public interface NewLoginPage {
 	/**
 	 * 用于展示用户的感想
 	 */
-	List<ListAllFeeling> findAllFeeling();
+	List<ListAllFeeling> findAllFeeling(@Param(value="staffCode") String staffCode);
 
 }
 

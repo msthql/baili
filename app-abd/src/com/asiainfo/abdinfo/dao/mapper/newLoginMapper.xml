@@ -38,7 +38,7 @@
    
    
    
-	<select id="findAllFeeling" resultType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">
+	<select id="findAllFeeling" parameterType="String" resultType="ListAllFeeling">
 	SELECT
 		rr.id,
 		rd.`姓名` as staffName, 
@@ -59,6 +59,7 @@
 		LEFT JOIN usertable uu ON rr.staffCode=uu.`员工编码`
 		LEFT JOIN datacenter_personnel rd ON rr.staffCode=rd.`人员编码`
 		WHERE rr.clockDate=curdate() AND rr.ReadingFeeling!=''
+		AND 事业部 in (select 事业部 from datacenter_personnel where 人员编码=#{staffCode})
 	</select>
 
 

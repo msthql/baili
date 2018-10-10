@@ -17,6 +17,7 @@ import com.asiainfo.abdinfo.po.BaseInformation;
 import com.asiainfo.abdinfo.service.impl.BaseInformationImpl;
 import com.asiainfo.abdinfo.service.impl.NewLoginImple;
 import com.asiainfo.abdinfo.service.impl.ReadClockImple;
+import com.asiainfo.abdinfo.service.impl.SixDiligenceServiceImpl;
 
 public class TestDate {
 
@@ -50,13 +51,13 @@ public class TestDate {
 	
 	@Test
 	public void test4() {
-		NewLoginImple mlcvp;
+		SixDiligenceServiceImpl mlcvp;
 		ApplicationContext ac = new ClassPathXmlApplicationContext("conf/spring-mvc.xml", "conf/spring-mybatis.xml");
-		mlcvp = ac.getBean("NewLoginService", NewLoginImple.class);
-//		Map map=new HashMap();
-//		map.put("openId", "o1wLm5ZxhtAgb3To0IH4xrngy3H8");
-//		map.put("nickName", "梦之缔造者");
-		System.out.println(mlcvp.getNewUser("o1wLm5ZxhtAgb3To0IH4xrngy3H8"));
+		mlcvp = ac.getBean("ISixDiligenceService", SixDiligenceServiceImpl.class);
+		Map map=new HashMap();
+		map.put("staffCode", "18060404");
+		map.put("date", "2018-10-10");
+		mlcvp.findSixDiligence(map);
 		
 		
 		

@@ -98,13 +98,12 @@ public class ReadClockController {
 	@ResponseBody
 	@RequestMapping(value="listAllFeeling.do")
 	public void findAllFeeling(HttpServletRequest request,HttpServletResponse response){
-		ResponseUtils.renderJson(response, JsonUtils.toJson( newLoginService.getAllFeeling()));	
+		String staffCode=request.getParameter("staffCode");
+		ResponseUtils.renderJson(response, JsonUtils.toJson( newLoginService.getAllFeeling(staffCode)));	
 	}
 	
 	
 	
-	
-
 }
 
 
