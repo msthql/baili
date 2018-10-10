@@ -34,9 +34,10 @@ public class WorkPlanWeb {
 	
 	@RequestMapping(value="/addworkplan.do")
 	public void addworkplan(HttpServletRequest request,HttpServletResponse response,/**String  部门,
-			String  姓名,*/String  人员编码,String 日期,String workplan){
+			String  Username,*/String  usercode,String nowday,String workplan){
 		System.out.println(workplan);
-		Personnel per=perService.findByCode(人员编码);
+		Personnel per=perService.findByCode(usercode);
+		System.out.println(per);
 		JSONArray json = JSON.parseArray(workplan);
 		Iterator it = json.iterator();
 		List<WorkPlan> list=new ArrayList<WorkPlan>();
@@ -44,21 +45,22 @@ public class WorkPlanWeb {
 			WorkPlan workPlan=new WorkPlan();
 			JSONObject sObj = (JSONObject)it.next();
 			String name=sObj.getString("name");
-			workPlan.set人员编码(per.get人员编码());
-			workPlan.set姓名(per.get姓名());
-			workPlan.set部门(per.get部门());
-			workPlan.set日期(日期);
-			workPlan.set实际完成内容(name);
+			workPlan.setStaffCode(per.getUsercode());
+			workPlan.setStaffName(per.getUsername());
+			workPlan.setDepartment(per.getDepartment());
+			workPlan.setDate(nowday);
+			workPlan.setActconcom(name);
 			list.add(workPlan);
 		}
-		try {
-			wps.delwkl(人员编码, 日期);
+		/*try {
+		 */
+			wps.delwkl(usercode,nowday);
 			wps.addWorkPlan(list);
 			ResponseUtils.renderJson(response, JsonUtils.toJson("提交成功"));
-		} catch (RuntimeException e) {
+		/*} catch (RuntimeException e) {
 			// TODO: handle exception
 			ResponseUtils.renderJson(response, JsonUtils.toJson("提交失败"));
-		}
+		}*/
 	}
 	@RequestMapping("/findnowdayplan.do")
 	public void findnowdayplan(HttpServletRequest request,HttpServletResponse response,String usercode,String nowday){

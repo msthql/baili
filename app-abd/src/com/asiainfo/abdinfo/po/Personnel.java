@@ -1,32 +1,63 @@
 package com.asiainfo.abdinfo.po;
 
+import java.util.List;
+
 public class Personnel {
-			  private String 人员编码;
-	          private String 姓名;
-		      private String 部门;
+			  //人员编码
+			  private String usercode;
+			  //姓名
+	          private String username;
+	          //部门
+		      private String department;
+		      //ID
 		      private Integer ID;
-		      private String 事业部;
-		      private Integer 事业部id;
-		      private String 职称;
-		      private String 岗位;
-		      private String 职位;
-		      private String 登录密码;
-		      private Integer 数据级别;
-		      private java.time.LocalDate 开始日期;
-		      private String 特殊状态;
-		      private String 权限;
-		      private String 备注;
-			public String get姓名() {
-				return 姓名;
+		      //事业部
+		      private String division;
+		      //事业部id
+		      private Integer dvsid;
+		      //职称
+		      private String jobname;
+		      //岗位
+		      private String jobs;
+		      //职位
+		      private String position;
+		      //密码
+		      private String password;
+		      //数据级别
+		      private Integer datalevel;
+		      //开始日期
+		      private java.time.LocalDate startdate;
+		      //特殊状态
+		      private String state;
+		      //权限
+		      private String permissions;
+		      //备注
+		      private String comment;
+		      private List<WorkPlan> wplist;
+		      
+			public List<WorkPlan> getWplist() {
+				return wplist;
 			}
-			public void set姓名(String 姓名) {
-				this.姓名 = 姓名;
+			public void setWplist(List<WorkPlan> wplist) {
+				this.wplist = wplist;
 			}
-			public String get部门() {
-				return 部门;
+			public String getUsercode() {
+				return usercode;
 			}
-			public void set部门(String 部门) {
-				this.部门 = 部门;
+			public void setUsercode(String usercode) {
+				this.usercode = usercode;
+			}
+			public String getUsername() {
+				return username;
+			}
+			public void setUsername(String username) {
+				this.username = username;
+			}
+			public String getDepartment() {
+				return department;
+			}
+			public void setDepartment(String department) {
+				this.department = department;
 			}
 			public Integer getID() {
 				return ID;
@@ -34,88 +65,83 @@ public class Personnel {
 			public void setID(Integer iD) {
 				ID = iD;
 			}
-			public String get事业部() {
-				return 事业部;
+			public String getDivision() {
+				return division;
 			}
-			public void set事业部(String 事业部) {
-				this.事业部 = 事业部;
+			public void setDivision(String division) {
+				this.division = division;
 			}
-			public Integer get事业部id() {
-				return 事业部id;
+			public Integer getDvsid() {
+				return dvsid;
 			}
-			public void set事业部id(Integer 事业部id) {
-				this.事业部id = 事业部id;
+			public void setDvsid(Integer dvsid) {
+				this.dvsid = dvsid;
 			}
-			public String get职称() {
-				return 职称;
+			public String getJobname() {
+				return jobname;
 			}
-			public void set职称(String 职称) {
-				this.职称 = 职称;
+			public void setJobname(String jobname) {
+				this.jobname = jobname;
 			}
-			public String get岗位() {
-				return 岗位;
+			public String getJobs() {
+				return jobs;
 			}
-			public void set岗位(String 岗位) {
-				this.岗位 = 岗位;
+			public void setJobs(String jobs) {
+				this.jobs = jobs;
 			}
-			public String get职位() {
-				return 职位;
+			public String getPosition() {
+				return position;
 			}
-			public void set职位(String 职位) {
-				this.职位 = 职位;
+			public void setPosition(String position) {
+				this.position = position;
 			}
-			public String get登录密码() {
-				return 登录密码;
+			public String getPassword() {
+				return password;
 			}
-			public void set登录密码(String 登录密码) {
-				this.登录密码 = 登录密码;
+			public void setPassword(String password) {
+				this.password = password;
 			}
-			public Integer get数据级别() {
-				return 数据级别;
+			public Integer getDatalevel() {
+				return datalevel;
 			}
-			public void set数据级别(Integer 数据级别) {
-				this.数据级别 = 数据级别;
+			public void setDatalevel(Integer datalevel) {
+				this.datalevel = datalevel;
 			}
-			public java.time.LocalDate  get开始日期() {
-				return 开始日期;
+			public java.time.LocalDate getStartdate() {
+				return startdate;
 			}
-			public void set开始日期(java.time.LocalDate  开始日期) {
-				this.开始日期 = 开始日期;
+			public void setStartdate(java.time.LocalDate startdate) {
+				this.startdate = startdate;
 			}
-			public String get特殊状态() {
-				return 特殊状态;
+			public String getState() {
+				return state;
 			}
-			public void set特殊状态(String 特殊状态) {
-				this.特殊状态 = 特殊状态;
+			public void setState(String state) {
+				this.state = state;
 			}
-			public String get权限() {
-				return 权限;
+			public String getPermissions() {
+				return permissions;
 			}
-			public void set权限(String 权限) {
-				this.权限 = 权限;
+			public void setPermissions(String permissions) {
+				this.permissions = permissions;
 			}
-			public String get备注() {
-				return 备注;
+			public String getComment() {
+				return comment;
 			}
-			public void set备注(String 备注) {
-				this.备注 = 备注;
-			}
-			
-			public String get人员编码() {
-				return 人员编码;
-			}
-			public void set人员编码(String 人员编码) {
-				this.人员编码 = 人员编码;
+			public void setComment(String comment) {
+				this.comment = comment;
 			}
 			@Override
 			public String toString() {
-				return "Personnel [姓名=" + 姓名 + ", 部门=" + 部门 + ", ID=" + ID
-						+ ", 事业部=" + 事业部 + ", 事业部id=" + 事业部id + ", 职称=" + 职称
-						+ ", 岗位=" + 岗位 + ", 职位=" + 职位 + ", 登录密码=" + 登录密码
-						+ ", 数据级别=" + 数据级别 + ", 开始日期=" + 开始日期 + ", 特殊状态="
-						+ 特殊状态 + ", 权限=" + 权限 + ", 备注=" + 备注 + "]";
-				
+				return "Personnel [usercode=" + usercode + ", username="
+						+ username + ", department=" + department + ", ID="
+						+ ID + ", division=" + division + ", dvsid=" + dvsid
+						+ ", jobname=" + jobname + ", jobs=" + jobs
+						+ ", position=" + position + ", password=" + password
+						+ ", datalevel=" + datalevel + ", startdate="
+						+ startdate + ", state=" + state + ", permissions="
+						+ permissions + ", comment=" + comment + ", wplist="
+						+ wplist + "]";
 			}
-
-		      
+			
 }

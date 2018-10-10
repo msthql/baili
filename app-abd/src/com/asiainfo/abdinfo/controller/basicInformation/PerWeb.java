@@ -23,27 +23,24 @@ public class PerWeb {
 	@Autowired
 	private PerService perservice;
 	
-	
-	@RequestMapping(value="/login.do")
-	public void login(HttpServletRequest request,HttpServletResponse response,String usercode,String password){
-		Personnel u=perservice.findByUser(usercode, password);
-		/*String json=JSON.toJSONString(u);*/
-		ResponseUtils.renderJson(response, JsonUtils.toJson(u));
-	}
-	
-	
 	@RequestMapping(value="/findName.do")
 	public void findName(HttpServletRequest request,HttpServletResponse response){
 		List<Personnel> list=perservice.findAllPer();
 		List<String> namelist=new ArrayList<String>();
 		for (Personnel per : list) {
-			namelist.add(per.get姓名());
+			namelist.add(per.getUsername());
 		}
 		for (Personnel per : list) {
-			namelist.add(per.get姓名());
+			namelist.add(per.getUsername());
 		}
 		ResponseUtils.renderJson(response, JsonUtils.toJson(namelist));
   
+	}
+	
+	@RequestMapping("/findAllnowday.do")
+	public void findAllnowday(HttpServletRequest request,HttpServletResponse response,String usercode,String nowday){
+		List<Personnel> perlist=perservice.findAllBynowday(usercode, nowday);
+		ResponseUtils.renderJson(response, JsonUtils.toJson(perlist));
 	}
 }
 

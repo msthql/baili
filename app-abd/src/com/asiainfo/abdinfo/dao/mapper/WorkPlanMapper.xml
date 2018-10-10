@@ -4,15 +4,17 @@
 
 	<insert id="addWorkPlan">
 		INSERT INTO work_plan
-           (部门,人员编码,姓名,日期,实际完成内容)
+           (department,staffCode,staffName,date,actconcom)
      VALUES
-           (#{部门},#{人员编码},#{姓名},#{日期},#{实际完成内容})
+           (#{department},#{staffCode},#{staffName},#{date},#{actconcom})
 	</insert>
 	<delete id="delwkl">
-		delete from work_plan where 人员编码=#{usercode} and 日期=#{nowtime}
+		delete from work_plan where staffCode=#{usercode} and date=#{nowtime}
 	</delete>
 	
 	<select id="findnowday" resultType="com.asiainfo.abdinfo.po.WorkPlan">
-		select * from work_plan where 人员编码=#{usercode} and 日期=#{nowday}
+		select id as id,department,staffCode,staffName,date,type,projectname,plantime,
+  actualtime,conbecom,dockingpeople,completion,outcause,actconcom
+		from work_plan where staffCode=#{usercode} and date=#{nowday}
 	</select>
 </mapper>
