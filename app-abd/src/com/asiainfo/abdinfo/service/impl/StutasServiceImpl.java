@@ -27,5 +27,11 @@ public class StutasServiceImpl implements IStutasService{
 		System.out.println(stutaDao.addStutas(listAllFeeling));
 		return stutaDao.addStutas(listAllFeeling);
 	}
+	
+	@Override
+	public List<ListAllFeeling> selectEnshrines(String staffCode) {
+		// TODO Auto-generated method stub
+		return stutaDao.selectEnshrines(staffCode);
+	}
 
 }

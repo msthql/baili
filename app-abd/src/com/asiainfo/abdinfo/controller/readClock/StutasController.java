@@ -38,13 +38,13 @@ public class StutasController {
 		ResponseUtils.renderJson(response, result);
 	}
 	
-	/*@RequestMapping(value="/enshrines.do")
+	@RequestMapping(value="/enshrines.do")
 	@ResponseBody
 	public List<ListAllFeeling> enshrines(HttpServletRequest request,HttpServletResponse response){
 		String staffCode=request.getParameter("staffCode");
 		List<ListAllFeeling> list=stutasService.selectEnshrines(staffCode);
-		JSONArray jsonArray=JSONArray.;
-		ResponseUtils.renderJson(response, );
+		/*JSONArray jsonArray=JSONArray.;
+		ResponseUtils.renderJson(response, );*/
 		return list;
-	}*/
+	}
 }
