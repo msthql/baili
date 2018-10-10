@@ -8,5 +8,5 @@ public interface WorkPlanService {
 	
 	public void delwkl(String usercode,String nowdate);
 	
-	public List<WorkPlan> findnowday(String usercode,String nowday);
+	public List<WorkPlan> findnowday(String usercode,String nowday); 
 }

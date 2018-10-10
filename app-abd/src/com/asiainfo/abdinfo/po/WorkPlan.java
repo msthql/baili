@@ -2,112 +2,128 @@ package com.asiainfo.abdinfo.po;
 
 public class WorkPlan {
 			    private Integer  id;
-		        private String  部门;
-		        private String  人员编码;
-		        private String  姓名;
-		        private String  日期;
-		        private String  类型;
-		        private String  项目名称;
-		        private String  计划时长;
-		        private String  实际时长;
-		        private String  计划完成内容;
-		        private String  对接人;
-		        private String  完成率;
-		        private String  未完成原因;
-		        private String  实际完成内容;
+			    //部门
+		        private String  department;
+		        //人员编码
+		        private String  staffCode;
+		        //姓名
+		        private String  staffName;
+		        //日期
+		        private String  date;
+		        //类型
+		        private String  type;
+		        //项目名称
+		        private String  projectname;
+		        //计划时长
+		        private String  plantime;
+		        //实际时长
+		        private String  actualtime;
+		        //计划完成内容
+		        private String  conbecom;
+		        //对接人
+		        private String  dockingpeople;
+		        //完成率
+		        private String  completion;
+		        //未完成原因
+		        private String  outcause;
+		        //实际完成内容
+		        private String  actconcom;
 				public Integer getId() {
 					return id;
 				}
 				public void setId(Integer id) {
 					this.id = id;
 				}
-				public String get部门() {
-					return 部门;
+				public String getDepartment() {
+					return department;
 				}
-				public void set部门(String 部门) {
-					this.部门 = 部门;
+				public void setDepartment(String department) {
+					this.department = department;
 				}
-				public String get人员编码() {
-					return 人员编码;
+				
+				public String getDate() {
+					return date;
 				}
-				public void set人员编码(String 人员编码) {
-					this.人员编码 = 人员编码;
+				public void setDate(String date) {
+					this.date = date;
 				}
-				public String get姓名() {
-					return 姓名;
+				public String getType() {
+					return type;
 				}
-				public void set姓名(String 姓名) {
-					this.姓名 = 姓名;
+				public void setType(String type) {
+					this.type = type;
 				}
-				public String get日期() {
-					return 日期;
+				public String getProjectname() {
+					return projectname;
 				}
-				public void set日期(String 日期) {
-					this.日期 = 日期;
+				public void setProjectname(String projectname) {
+					this.projectname = projectname;
 				}
-				public String get类型() {
-					return 类型;
+				public String getPlantime() {
+					return plantime;
 				}
-				public void set类型(String 类型) {
-					this.类型 = 类型;
+				public void setPlantime(String plantime) {
+					this.plantime = plantime;
 				}
-				public String get项目名称() {
-					return 项目名称;
+				public String getActualtime() {
+					return actualtime;
 				}
-				public void set项目名称(String 项目名称) {
-					this.项目名称 = 项目名称;
+				public void setActualtime(String actualtime) {
+					this.actualtime = actualtime;
 				}
-				public String get计划时长() {
-					return 计划时长;
+				public String getConbecom() {
+					return conbecom;
 				}
-				public void set计划时长(String 计划时长) {
-					this.计划时长 = 计划时长;
+				public void setConbecom(String conbecom) {
+					this.conbecom = conbecom;
 				}
-				public String get实际时长() {
-					return 实际时长;
+				public String getDockingpeople() {
+					return dockingpeople;
 				}
-				public void set实际时长(String 实际时长) {
-					this.实际时长 = 实际时长;
+				public void setDockingpeople(String dockingpeople) {
+					this.dockingpeople = dockingpeople;
 				}
-				public String get计划完成内容() {
-					return 计划完成内容;
+				public String getCompletion() {
+					return completion;
 				}
-				public void set计划完成内容(String 计划完成内容) {
-					this.计划完成内容 = 计划完成内容;
+				public void setCompletion(String completion) {
+					this.completion = completion;
 				}
-				public String get对接人() {
-					return 对接人;
+				public String getOutcause() {
+					return outcause;
 				}
-				public void set对接人(String 对接人) {
-					this.对接人 = 对接人;
+				public void setOutcause(String outcause) {
+					this.outcause = outcause;
 				}
-				public String get完成率() {
-					return 完成率;
+				public String getActconcom() {
+					return actconcom;
 				}
-				public void set完成率(String 完成率) {
-					this.完成率 = 完成率;
+				public void setActconcom(String actconcom) {
+					this.actconcom = actconcom;
 				}
-				public String get未完成原因() {
-					return 未完成原因;
+				public String getStaffCode() {
+					return staffCode;
 				}
-				public void set未完成原因(String 未完成原因) {
-					this.未完成原因 = 未完成原因;
+				public void setStaffCode(String staffCode) {
+					this.staffCode = staffCode;
 				}
-				public String get实际完成内容() {
-					return 实际完成内容;
+				public String getStaffName() {
+					return staffName;
 				}
-				public void set实际完成内容(String 实际完成内容) {
-					this.实际完成内容 = 实际完成内容;
+				public void setStaffName(String staffName) {
+					this.staffName = staffName;
 				}
 				@Override
 				public String toString() {
-					return "WorkPlan [id=" + id + ", 部门=" + 部门 + ", 人员编码="
-							+ 人员编码 + ", 姓名=" + 姓名 + ", 日期=" + 日期 + ", 类型=" + 类型
-							+ ", 项目名称=" + 项目名称 + ", 计划时长=" + 计划时长 + ", 实际时长="
-							+ 实际时长 + ", 计划完成内容=" + 计划完成内容 + ", 对接人=" + 对接人
-							+ ", 完成率=" + 完成率 + ", 未完成原因=" + 未完成原因 + ", 实际完成内容="
-							+ 实际完成内容 + "]";
+					return "WorkPlan [id=" + id + ", department=" + department
+							+ ", staffCode=" + staffCode + ", staffName="
+							+ staffName + ", date=" + date + ", type=" + type
+							+ ", projectname=" + projectname + ", plantime="
+							+ plantime + ", actualtime=" + actualtime
+							+ ", conbecom=" + conbecom + ", dockingpeople="
+							+ dockingpeople + ", completion=" + completion
+							+ ", outcause=" + outcause + ", actconcom="
+							+ actconcom + "]";
 				}
-		        
-
+				
 }
