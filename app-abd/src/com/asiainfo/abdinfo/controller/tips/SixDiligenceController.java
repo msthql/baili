@@ -25,13 +25,17 @@ public class SixDiligenceController {
 	
 	@RequestMapping(value="/sixDiligence.do")
 	public void findSixDiligence(HttpServletRequest request,HttpServletResponse response) throws ParseException{
-		Date day=new Date();
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
-		String date=df.format(day);
-		System.out.println(df.format(day));
+		
 		String staffCode=request.getParameter("staffCode");
 		Map<String, Object> map=new HashMap<String,Object>();
-		map.put("date", date);
+		String stutas=request.getParameter("stutas");
+		if (stutas==null) {
+			Date day=new Date();
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
+			String date=df.format(day);
+			System.out.println(df.format(day));
+			map.put("date", date);
+		}
 		map.put("staffCode", staffCode);
 		ResponseUtils.renderJson(response, JsonUtils.toJson(sixDiligenceService.findSixDiligence(map)));
 	}

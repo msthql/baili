@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.asiainfo.abdinfo.common.CurrentTime;
@@ -16,12 +15,9 @@ import com.asiainfo.abdinfo.common.JsonUtils;
 import com.asiainfo.abdinfo.common.ResponseUtils;
 import com.asiainfo.abdinfo.po.Announcement;
 import com.asiainfo.abdinfo.po.ReadClock;
-import com.asiainfo.abdinfo.po.User;
-import com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling;
 import com.asiainfo.abdinfo.po.NewLoginBean.NewLogin;
 import com.asiainfo.abdinfo.service.NewLoginService;
 import com.asiainfo.abdinfo.service.ReadClockService;
-import com.asiainfo.abdinfo.service.UserService;
 
 @Controller
 public class ReadClockController {
