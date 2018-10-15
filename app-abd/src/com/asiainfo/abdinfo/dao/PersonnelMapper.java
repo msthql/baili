@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.asiainfo.abdinfo.po.Personnel;
+import com.asiainfo.abdinfo.po.NewLoginBean.NewLogin;
 
 public interface PersonnelMapper {
 	
@@ -14,5 +15,7 @@ public interface PersonnelMapper {
 	public Personnel findByCode(@Param("usercode") String usercode);
 	
 	public List<Personnel> findBybm(@Param("bumen") String bumen);
+	
+	public NewLogin findbycode(@Param("staffcode")String staffcode);
 	
 }

@@ -2,6 +2,8 @@ package com.asiainfo.abdinfo.po;
 
 import java.util.List;
 
+import com.asiainfo.abdinfo.po.NewLoginBean.NewLogin;
+
 public class Personnel {
 			  //人员编码
 			  private String usercode;
@@ -34,6 +36,14 @@ public class Personnel {
 		      //备注
 		      private String comment;
 		      private List<WorkPlan> wplist;
+		      
+		      public NewLogin getNewLogin() {
+				return newLogin;
+			}
+			public void setNewLogin(NewLogin newLogin) {
+				this.newLogin = newLogin;
+			}
+			private NewLogin  newLogin;
 		      
 			public List<WorkPlan> getWplist() {
 				return wplist;
@@ -133,15 +143,12 @@ public class Personnel {
 			}
 			@Override
 			public String toString() {
-				return "Personnel [usercode=" + usercode + ", username="
-						+ username + ", department=" + department + ", ID="
-						+ ID + ", division=" + division + ", dvsid=" + dvsid
-						+ ", jobname=" + jobname + ", jobs=" + jobs
-						+ ", position=" + position + ", password=" + password
-						+ ", datalevel=" + datalevel + ", startdate="
-						+ startdate + ", state=" + state + ", permissions="
-						+ permissions + ", comment=" + comment + ", wplist="
-						+ wplist + "]";
+				return "Personnel [usercode=" + usercode + ", username=" + username + ", department=" + department
+						+ ", ID=" + ID + ", division=" + division + ", dvsid=" + dvsid + ", jobname=" + jobname
+						+ ", jobs=" + jobs + ", position=" + position + ", password=" + password + ", datalevel="
+						+ datalevel + ", startdate=" + startdate + ", state=" + state + ", permissions=" + permissions
+						+ ", comment=" + comment + ", wplist=" + wplist + ", newLogin=" + newLogin + "]";
 			}
+			
 			
 }

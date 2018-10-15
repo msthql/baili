@@ -33,7 +33,7 @@
     
     <select id="findTips" parameterType="java.util.Map" resultMap="tips">
     	select date,staffCode,owePerson,oweDetails from owes_content
-    	where staffCode=#{staffCode}  order by date desc
+    	where staffCode=#{staffCode}
 		<if test="date!=null">
 			and date=#{date}
 		</if>
@@ -42,7 +42,7 @@
 	<!-- 查询六项精进"今日感想","今日反省","今日善行","感恩其他" -->
 	<select id="findSixDiligence"  parameterType="java.util.Map" resultMap="sixDiligence">
 		select r.id,r.department,r.types,r.content,r.staffCode,r.date from Reading_reflection r
-		where staffCode=#{staffCode}  order by r.date desc
+		where staffCode=#{staffCode}
 		<if test="date!=null">
 			and date=#{date}
 		</if>
@@ -52,7 +52,7 @@
 	<select id="findReadFeeling"  parameterType="java.util.Map" resultMap="sixDiligences">
 		select * from reading_detail d 
 		INNER JOIN reading_plancontent p on d.id=p.ChapterId 
-		where staffCode=#{staffCode} and ReadingFeeling is not null order by clockDate desc
+		where staffCode=#{staffCode} and ReadingFeeling is not null
 		<if test="date!=null">
 			and clockDate=#{date}
 		</if>
@@ -60,7 +60,7 @@
 	<!-- 查询六项精进行实践内容 -->
 	<select id="findWork"  parameterType="java.util.Map" resultMap="works">
 		select actconcom ,date from work_plan 
-		where staffCode=#{staffCode}  order by date desc
+		where staffCode=#{staffCode}
 		<if test="date!=null">
 			and date=#{date}
 		</if>

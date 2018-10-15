@@ -22,4 +22,17 @@ where 人员编码=#{usercode}
 		where 部门=#{bumen}
 	</select>
 
+	<select id="findbycode" resultType="com.asiainfo.abdinfo.po.NewLoginBean.NewLogin">
+		select
+		员工编码 as staffCode,
+		微信名 as nickName,
+		性别 as
+		gender,
+		城市 as city,
+		省份 as province,
+		国家 as country,
+		头像 as avatarUrl
+		from
+		USERTABLE where 员工编码=#{staffcode}
+	</select>
 </mapper>

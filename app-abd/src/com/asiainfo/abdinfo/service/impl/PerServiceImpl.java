@@ -48,9 +48,10 @@ public class PerServiceImpl implements PerService{
 		List<Personnel> perlistk=new ArrayList<Personnel>();
 		for (int i=0;i<perlist.size();i++) {
 			List<WorkPlan> wkList=wkser.findnowday(perlist.get(i) .getUsercode(), nowday);
+				perlist.get(i).setNewLogin(permapper.findbycode(perlist.get(i) .getUsercode()));
 				perlist.get(i).setWplist(wkList);
 				System.out.println(perlist.get(i));
-				if (!perlist.get(i).getWplist().isEmpty()/*&&!perlist.get(i).getUsercode().equals(usercode)*/) {
+				if (!perlist.get(i).getWplist().isEmpty()&&!perlist.get(i).getUsercode().equals(usercode)) {
 					perlistk.add(perlist.get(i));
 				}
 		}
