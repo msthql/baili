@@ -71,7 +71,7 @@
 		UPDATE
 		bailidushu_test.Reading_plancontent
 		SET actualReading =
-		now(),timeLength=#{timeLength},ReadingFeeling=#{feeling},num=#{num}
+		now(),timeLength=#{timeLength},ReadingFeeling=#{feeling},num=#{num},praiseNum=0,fabulousNum=0,enshrineNum=0
 		WHERE staffCode=#{staffCode}
 		and clockDate=#{clockDate}
 	</update>

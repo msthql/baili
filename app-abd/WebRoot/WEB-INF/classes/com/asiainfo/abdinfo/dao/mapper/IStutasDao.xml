@@ -6,13 +6,30 @@
 		<result property="staffCode" column="staffCode" />
 		<result property="ReadingFeeling" column="ReadingFeeling"/>
 		<result property="staffName" column="姓名" />
+		<result property="date" column="clockDate" />
 	</resultMap>
-
+	
+	<resultMap type="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling" id="allNum">
+		<result property="praise" column="praise" />
+		<result property="praiseNum" column="praiseNum"/>
+		<result property="fabulous" column="fabulous" />
+		<result property="fabulousNum" column="fabulousNum" />
+		<result property="enshrine" column="enshrine" />
+		<result property="enshrineNum" column="enshrineNum" />
+	</resultMap>
+	
+	<!--查询点赞数量 -->
+	<select id="findPariseNum" resultMap="allNum">
+		select praise,praiseNum,fabulous,fabulousNum,enshrine,enshrineNum from Reading_plancontent
+		where id=#{id}
+	</select>
+	
 	<!-- 更新数据即插入数据 -->
 	<update id="addStutas" parameterType="com.asiainfo.abdinfo.po.NewLoginBean.ListAllFeeling">  
 		UPDATE
 		Reading_plancontent
-		SET praise=#{praise},fabulous=#{fabulous},enshrine=#{enshrine}
+		SET praise=#{praise},praiseNum=#{praiseNum},fabulous=#{fabulous},fabulousNum=#{fabulousNum},
+		enshrine=#{enshrine},enshrineNum=#{enshrineNum}
 		where id=#{id}
 	</update>
 	
@@ -31,7 +48,7 @@
 	
 	<!-- 查询收藏的全部信息 -->
 	<select id="selectEnshrines" resultMap="enshrines">
-		select m.staffCode,r.ReadingFeeling,d.姓名,rd.clockDirectory from myenshrine m 
+		select m.staffCode,r.ReadingFeeling,d.姓名,rd.clockDirectory,r.clockDate from myenshrine m 
 		INNER JOIN reading_plancontent r on m.enshrineID=r.id 
 		INNER JOIN reading_detail rd on rd.id=r.ChapterId
 		INNER JOIN datacenter_personnel d on r.staffCode=d.人员编码

@@ -1,6 +1,7 @@
 package com.asiainfo.abdinfo.po.NewLoginBean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class ListAllFeeling implements Serializable{
 
@@ -16,6 +17,9 @@ public class ListAllFeeling implements Serializable{
 	
 	//rr.timeLength,
 	private String timeLength;
+	
+	//时间
+	private Date date;
 	
 	//rr.ReadingFeeling,
 	private String ReadingFeeling;
@@ -174,6 +178,14 @@ public class ListAllFeeling implements Serializable{
 
 	public void setClockDirectory(String clockDirectory) {
 		this.clockDirectory = clockDirectory;
+	}
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	@Override

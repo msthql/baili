@@ -19,4 +19,6 @@ public interface IStutasDao {
 	public int deleteEnshrine( ListAllFeeling listAllFeeling);
 	//查询全部收藏信息
 	public List<ListAllFeeling> selectEnshrines( String staffCode);
+	//查询所有点赞 超赞 收藏数量和状态
+	public ListAllFeeling findPariseNum(ListAllFeeling listAllFeeling);
 }

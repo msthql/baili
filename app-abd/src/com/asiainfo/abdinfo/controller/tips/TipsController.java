@@ -41,9 +41,10 @@ public class TipsController {
 		String staffCode=request.getParameter("staffCode");
 		String tips=request.getParameter("tips");
 		String menus=request.getParameter("menus");
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		String time=request.getParameter("date");
+		/*SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		String time=df.format(new Date());
-		Date date=df.parse(time);
+		Date date=df.parse(time);*/
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("time",time);
 		map.put("tips", tips);

@@ -1,8 +1,7 @@
 package com.asiainfo.abdinfo.controller.tips;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,10 +29,11 @@ public class SixDiligenceController {
 		Map<String, Object> map=new HashMap<String,Object>();
 		String stutas=request.getParameter("stutas");
 		if (stutas==null) {
-			Date day=new Date();
+			String date=request.getParameter("date");
+			/*Date day=new Date();
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
 			String date=df.format(day);
-			System.out.println(df.format(day));
+			System.out.println(df.format(day));*/
 			map.put("date", date);
 		}
 		map.put("staffCode", staffCode);
